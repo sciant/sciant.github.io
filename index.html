@@ -44,6 +44,9 @@
                 <a href="#top" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
+                <a href="#products" onclick = $("#menu-close").click(); >Products</a>
+            </li>
+            <li>
                 <a href="#about" onclick = $("#menu-close").click(); >About</a>
             </li>
             <li>
@@ -56,16 +59,48 @@
     </nav>
 
     <!-- Header -->
-    <header id="top" class="header">
+<!--     <header id="top" class="header">
         <div class="text-vertical-center">
-            <!-- <h1>Sciant</h1> -->
-            <img style="height: 4.5em" src="img/sciantlogo.png"/>
+            <img style="height: 4.5em" src="img/Sciantlogo_no_site.png"/>
             <h3>Professionalism, diligence, excellence</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Learn More</a>
             <br><br><br><br><br><br><br><br><br><br><br>
         </div>
-    </header>
+    </header> -->
+    <header id="top" class="header">
+        <div class="logoStrip">
+              <div class="sciant-container clearfix">
+                  <aside class="logo">
+                      <a href="/" style="margin-bottom: 10px;">
+                          <img src="img/Sciantlogo_no_site.png" alt="Sciant Logo - Professionalism, diligence, excellence" style="height: 4.5em; margin-bottom: 10px;">
+                      </a><br>
+                      <span class="globalTagline">Professionalism, diligence, excellence</span>
+                  </aside>
+                </div>
+              <div class="image-container">
+              </div>
+          </div>        
+    </header>          
+
+
+    <!-- Products -->
+     <section id="products" class="bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Products</h2>
+                    <p class="lead" style="text-align: left;">Qualismatic is a QA tool aiming at 10x productivity enhancement of QA engineers. It allows a person to define test cases using the UI of program under test, with the marked distinction from existing tools that it anticipates changes in the UI as your product evolves. Qualismatic adapts to minor changes automatically, using a machine learning algorithm, and allows for easy replacement of test steps by a human whenever the UI workflow has changed significantly (as opposed to having to redo the entire test case or the engineer having to properly abstract the test steps in a test script's code from the beginning).</p>
+
+                    <p class="lead" style="text-align: left;">We are initailly developing a version of the tool for web applications. It works as a Chrome extension, with the recorded test cases managed in the cloud. Standard Javasript APIs capture events, event properties and UI layout and verify them against previous test runs and normal application usage. We are also testing similar techniques applied at an API level and desktop and mobile application UIs. </p>
+
+                    <p class="lead" style="text-align: left;">Beta version is available. Please send requests to <a href="mailto:info@sciant.com">info@sciant.com</a>.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
     <!-- About -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
@@ -118,13 +153,32 @@
                                 <h4>
                                     <strong>Technologies</strong>
                                 </h4>
-                                <ul class = "text-left">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <ul class = "text-left">
+                                            <li>Java</li>
+                                            <li>C++</li>
+                                            <li>Python</li>
+                                            <li>JavaScript</li>
+                                            <li>React</li>
+                                        </ul> 
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <ul class = "text-left">
+                                            <li>.NET</li>
+                                            <li>HTML5</li>
+                                            <li>CSS</li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                                <!-- <ul class = "text-left">
                                     <li>Java</li>
                                     <li>C++</li>
                                     <li>Python</li>
                                     <li>JavaScript</li>
                                     <li>React</li>
-                                </ul>
+                                </ul> -->
+                               
                             </div>
                         </div>
                     </div>
@@ -241,6 +295,15 @@
             $('#map_contact').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
     });    
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83544643-1', 'auto');
+      ga('send', 'pageview');
+
     </script>
 
 </body>

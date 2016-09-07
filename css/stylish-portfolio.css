@@ -45,16 +45,21 @@ body {
 }
 
 .btn-light {
-    border-radius: 0;
+/*    border-radius: 0;
     color: #333;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255,255,255);*/
+    border-radius: 0;
+    color: #999;  
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #333;
-    background-color: rgba(255,255,255,0.8);
+    /*color: #fff;
+    background-color: rgba(255,255,255,0.8);*/
+
+    color: #fff;
+    background: rgba(255,255,255,0.2);
 }
 
 /* Custom Horizontal Rule */
@@ -130,8 +135,8 @@ hr.small {
 #menu-toggle {
     z-index: 1;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 12px;
+    right: 12px;
 }
 
 #sidebar-wrapper.active {
@@ -154,13 +159,42 @@ hr.small {
     display: table;
     position: relative;
     width: 100%;
-    height: 100%;
-    background: url(../img/vitosha.jpg) no-repeat center center scroll;
+
+    -moz-background-size: 50% 50%;
+    -o-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%; 
+    background-size: 50% 50%;    
+}
+
+.logoStrip {
+    /*border-bottom: 1px solid #a7a7a7;*/
+    padding: 12px 0 0;
+}
+
+.logoStrip .sciant-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.logoStrip .image-container {
+    border-top: 1px solid #a7a7a7;
+    position: relative;
+    width: auto;
+    height: calc(100vh - 86px);
+    background: url(../img/sciant_image.jpg) no-repeat center top scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+
+.globalTagline {
+    color: #747678;
+    font-size: 18px;
+    /*margin-left: 20px;*/
+}
+
 
 /* About */
 
