@@ -299,6 +299,7 @@ input.gn-search:focus {
 	}
 
 	.gn-menu-main a {
+    		z-index: 1000;
 			display: block;
 			height: 100%;
 			color: #333;
