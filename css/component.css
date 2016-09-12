@@ -27,7 +27,7 @@
 
 .gn-menu-main {
 		position: fixed;
-		-webkit-backface-visibility: hidden;
+		/*-webkit-backface-visibility: hidden;*/
 		top: 12px;
 		right: 12px;
 		/*width: 100%;*/
