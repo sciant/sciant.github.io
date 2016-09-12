@@ -72,35 +72,35 @@
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
 					self._closeMenu();
-					document.removeEventListener( self.eventtype, self.bodyClickFn );
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
 			this.triggerProducts.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
 					self._closeMenu();
-					document.removeEventListener( self.eventtype, self.bodyClickFn );
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
 			this.triggerAbout.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
 					self._closeMenu();
-					document.removeEventListener( self.eventtype, self.bodyClickFn );
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
 			this.triggerCareers.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
 					self._closeMenu();
-					document.removeEventListener( self.eventtype, self.bodyClickFn );
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
 			this.triggerContact.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
 					self._closeMenu();
-					document.removeEventListener( self.eventtype, self.bodyClickFn );
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
 
