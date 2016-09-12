@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="css/component.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -28,12 +29,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<!--     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -56,7 +58,52 @@
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
             </li>
         </ul>
+    </nav> -->
+
+    <nav id="sidebar-wrapper">
+            <ul id="gn-menu" class="gn-menu-main">
+                <li class="gn-trigger">
+                    <a class="fa fa-bars fa-3 gn-icon gn-icon-menu" style="padding-top: 10px;"><span>Menu</span></a>
+                    <nav class="gn-menu-wrapper">
+                        <div class="gn-scroller">
+                            <ul class="gn-menu">
+                                <!-- <li class="gn-search-item">
+                                    <input placeholder="Search" type="search" class="gn-search">
+                                    <a class="gn-icon gn-icon-search"><span>Search</span></a>
+                                </li>
+                                <li>
+                                    <a class="gn-icon gn-icon-download">Downloads</a>
+                                    <ul class="gn-submenu">
+                                        <li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
+                                        <li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
+                                    </ul>
+                                </li> -->
+                                <li><a class="fa fa-home fa-lg gn-icon" href="#top">Home</a></li>
+                                <li><a class="fa fa-wrench fa-lg gn-icon" href="#products">Products</a></li>
+                                <li><a class="fa fa-info fa-lg gn-icon" href="#about">About</a></li>
+                                <li><a class="fa fa-thumbs-o-up fa-lg gn-icon" href="#careers">Careers</a></li>
+                                <li><a class="fa fa-envelope fa-lg gn-icon" href="#contact">Contact</a></li>
+                                <!-- <li><a class="gn-icon gn-icon-help">Help</a></li>
+                                <li>
+                                    <a class="gn-icon gn-icon-archive">Archives</a>
+                                    <ul class="gn-submenu">
+                                        <li><a class="gn-icon gn-icon-article">Articles</a></li>
+                                        <li><a class="gn-icon gn-icon-pictures">Images</a></li>
+                                        <li><a class="gn-icon gn-icon-videos">Videos</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div><!-- /gn-scroller -->
+                    </nav>
+                </li>
+                <li></li>
+                <!-- <li><a href="http://tympanus.net/codrops">Codrops</a></li>
+                <li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>Previous Demo</span></a></li>
+                <li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>Back to the Codrops Article</span></a></li> -->
+            </ul>
+
     </nav>
+
 
     <!-- Header -->
 <!--     <header id="top" class="header">
@@ -109,7 +156,10 @@
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>About Us</h2>
-                    <hr class="small">
+
+                    <p class="lead" style="text-align: left;">Sciant is a startup product company working on providing suite for QA automation.</p>
+
+                    <!-- <hr class="small">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="about-item">
@@ -171,17 +221,10 @@
                                         </ul> 
                                     </div>
                                 </div>
-                                <!-- <ul class = "text-left">
-                                    <li>Java</li>
-                                    <li>C++</li>
-                                    <li>Python</li>
-                                    <li>JavaScript</li>
-                                    <li>React</li>
-                                </ul> -->
                                
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- /.row (nested) -->
                 </div>
                 <!-- /.col-lg-10 -->
@@ -208,7 +251,7 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe id="map_contact" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.651505697637!2d23.370828938420495!3d42.668739885111336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcbc66ddbb54d08b3!2sSofia+Tech+Park!5e0!3m2!1sen!2sbg!4v1472470291603" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe id="map_contact" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.651505697637!2d23.370828938420495!3d42.668739885111336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcbc66ddbb54d08b3!2sSofia+Tech+Park!5e0!3m2!1sen!2sbg!4v1472470291603" frameborder="0" style="border:0; position:relative; z-index:-1;" allowfullscreen></iframe>
     </section>
 
     <!-- Footer -->
@@ -304,6 +347,13 @@
       ga('create', 'UA-83544643-1', 'auto');
       ga('send', 'pageview');
 
+    </script>
+
+
+    <script src="js/classie.js"></script>
+    <script src="js/gnmenu.js"></script>
+    <script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
     </script>
 
 </body>
