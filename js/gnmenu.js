@@ -28,11 +28,12 @@
 		_init : function() {
 			this.trigger = this.el.querySelector( 'a.gn-icon-menu' );
 			this.menu = this.el.querySelector( 'nav.gn-menu-wrapper' );
-			this.triggerHome = this.el.querySelector( 'a.fa-home.fa-lg.gn-icon' );
-			this.triggerProducts = this.el.querySelector( 'a.fa-wrench.fa-lg.gn-icon' );
-			this.triggerAbout = this.el.querySelector( 'a.fa-info.fa-lg.gn-icon' );
-			this.triggerCareers = this.el.querySelector( 'a.fa-thumbs-o-up.fa-lg.gn-icon' );
-			this.triggerContact = this.el.querySelector( 'a.fa-envelope.fa-lg.gn-icon' );
+			this.triggerHome = this.el.querySelector( 'a.a-top' );
+			this.triggerProducts = this.el.querySelector( 'a.a-products' );
+			this.triggerServices = this.el.querySelector( 'a.a-services' );
+			this.triggerAbout = this.el.querySelector( 'a.a-about' );
+			this.triggerCareers = this.el.querySelector( 'a.a-careers' );
+			this.triggerContact = this.el.querySelector( 'a.a-contact' );
 			this.isMenuOpen = false;
 			this.eventtype = mobilecheck() ? 'touchstart' : 'click';
 			this._initEvents();
@@ -82,6 +83,13 @@
 					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
+			this.triggerServices.addEventListener( this.eventtype, function( ev ) {
+				ev.stopPropagation();
+				if( self.isMenuOpen ) {
+					self._closeMenu();
+					//document.removeEventListener( self.eventtype, self.bodyClickFn );
+				}
+			} );
 			this.triggerAbout.addEventListener( this.eventtype, function( ev ) {
 				ev.stopPropagation();
 				if( self.isMenuOpen ) {
@@ -103,6 +111,7 @@
 					//document.removeEventListener( self.eventtype, self.bodyClickFn );
 				}
 			} );
+			
 
 			this.menu.addEventListener( this.eventtype, function(ev) { ev.stopPropagation(); } );
 		},

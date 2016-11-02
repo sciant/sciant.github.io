@@ -42,7 +42,7 @@
 		color: #333;
 		text-decoration: none;
 		cursor: pointer;    
-		padding-top: 30px;
+		padding-top: 15px;
 }
 
 .no-touch .gn-menu-main a:hover,
@@ -120,7 +120,7 @@
 .gn-menu {
 		border-bottom: 1px solid #c6d0da;
 		text-align: left;
-		font-size: 18px;
+		font-size: 24px;
 }
 
 .gn-menu li:not(:first-child),
