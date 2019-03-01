@@ -2,365 +2,353 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles/index.css" rel="stylesheet" />
+    <link rel="icon" href="assets/desktop/Logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
     <title>Sciant</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        $(function(){
+                $("#footer").load("view/footer.html");
+                $('#contact').load('view/contact.html')
+            });
+    </script>
 
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-    <link href="css/component.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("view");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+		
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-83544643-1', 'auto');
+		ga('send', 'pageview');
+    </script>
 
 </head>
 
 <body>
-
-    <!-- Navigation -->
-<!--     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Sciant</a>
+    <section class='header'>
+        <div class='logo-header'></div>
+        <ul>
+            <li><a href='view/about.html'>About Us</a></li>
+            <li><a href='#verticals'>Verticals</a></li>
+            <li><a href='#services'>Services</a></li>
+            <li><a href='#jobs'>Jobs</a></li>
+            <li><a href='#contact'>Contact</a></li>
+        </ul>
+    </section>
+    <section class='presentation'>
+        <h1> Building better software through relentless customer focus.</h1>
+        <h3>At Sciant, we specialize in delighting our customers by combining top notch service delivery with extensive
+            domain knowledge.</h3>
+        <div class="button" onclick="location.href='#contact'">Work with us</div>
+        <div>
+            <a href="https://twitter.com/share?url=https://www.sciant.com" target="_blank" class="twitter">Share on
+                Twitter</a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.sciant.com" target="_blank"
+                class="linkedin">Share on Linkedin</a>
+        </div>
+    </section>
+    <section id="about">
+        <video autoplay muted loop id='sciantVideo'>
+            <source src='assets/desktop/Sciant-Blue30s.mp4' type="video/mp4">
+        </video>
+        <h3>Our founders started Sciant to solve an industry challenge: Create a company that could quickly deliver
+            urgent customer projects without the typical months long knowledge transfer and overhead that traditional
+            outsourcing requires.
+        </h3>
+        <a href="view/about.html">Learn more about us</a>
+    </section>
+    <section id="verticals">
+        <h2> What we do</h2>
+        <p class='knowledge'>Sciant brings together deep knowledge and experience in the following verticals:</p>
+        <ul>
+            <li class="automotive">
+                <h3>Automotive</h3>
+                <p>Nearly ten years of project experience in Automotive supply chain solutions, working across borders
+                    from Europe to the Far East handling various different standards and localization requirements.</p>
             </li>
-            <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
-            </li>
-            <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
-            </li>
-            <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
-            </li>
-            <li>
-                <a href="#careers" onclick = $("#menu-close").click(); >Careers</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            <li class="finTech">
+                <h3>FinTech</h3>
+                <p> More than a decade of project experience in delivering investor grade solutions in high-frequency
+                    trading, blockchain and cryptocurrency, portfolio management, analytics, compliance and dark
+                    pool/crossing engine.</p>
             </li>
         </ul>
-    </nav> -->
-
-    <nav id="sidebar-wrapper">
-            <ul id="gn-menu" class="gn-menu-main">
-                <li class="gn-trigger">
-                    <a class="fa fa-bars fa-3 gn-icon gn-icon-menu" style="padding-top: 10px;"><span>Menu</span></a>
-                    <nav class="gn-menu-wrapper">
-                        <div class="gn-scroller">
-                            <ul class="gn-menu">
-                                <!-- <li class="gn-search-item">
-                                    <input placeholder="Search" type="search" class="gn-search">
-                                    <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                                </li>
-                                <li>
-                                    <a class="gn-icon gn-icon-download">Downloads</a>
-                                    <ul class="gn-submenu">
-                                        <li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
-                                        <li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
-                                    </ul>
-                                </li> -->
-                                <li><a href="#top" class="a-top"><i class="fa fa-home gn-icon"></i>Home</a></li>
-                                <li><a href="#about" class="a-about"><i class="fa fa-info gn-icon"></i>About</a></li>
-                                <li><a href="#services" class="a-services"><i class="fa fa-gears gn-icon"></i>Services</a></li>
-                                <li><a href="#careers" class="a-careers"><i class="fa fa-thumbs-o-up gn-icon"></i>Careers</a></li>
-                                <li><a href="#contact" class="a-contact"><i class="fa fa-envelope gn-icon"></i>Contact</a></li>
-                                <!-- <li><a class="gn-icon gn-icon-help">Help</a></li>
-                                <li>
-                                    <a class="gn-icon gn-icon-archive">Archives</a>
-                                    <ul class="gn-submenu">
-                                        <li><a class="gn-icon gn-icon-article">Articles</a></li>
-                                        <li><a class="gn-icon gn-icon-pictures">Images</a></li>
-                                        <li><a class="gn-icon gn-icon-videos">Videos</a></li>
-                                    </ul>
-                                </li> -->
-                            </ul>
-                        </div><!-- /gn-scroller -->
-                    </nav>
-                </li>
-                <li></li>
-                <!-- <li><a href="http://tympanus.net/codrops">Codrops</a></li>
-                <li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>Previous Demo</span></a></li>
-                <li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>Back to the Codrops Article</span></a></li> -->
-            </ul>
-
-    </nav>
-
-
-    <!-- Header -->
-<!--     <header id="top" class="header">
-        <div class="text-vertical-center">
-            <img style="height: 4.5em" src="img/Sciantlogo_no_site.png"/>
-            <h3>Professionalism, diligence, excellence</h3>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg">Learn More</a>
-            <br><br><br><br><br><br><br><br><br><br><br>
-        </div>
-    </header> -->
-    <header id="top" class="header">
-        <div class="logoStrip">
-              <div class="sciant-container clearfix">
-                  <aside class="logo">
-                      <a href="/" style="margin-bottom: 10px;">
-                          <img src="img/Sciantlogo_no_site.png" alt="Sciant Logo - Professionalism, diligence, excellence" style="height: 4.5em; margin-bottom: 10px;">
-                      </a><br>
-                      <span class="globalTagline">Professionalism, diligence, excellence</span>
-                  </aside>
+        <ul>
+            <li class="transportation">
+                <h3>Transportation & Logistics</h3>
+                <p>Tens of thousands of man-hours of project experience in delivering various solutions involving data
+                    gathering and analysis, profit optimization, loading and unloading optimization, and an air freight
+                    tariff data warehouse.</p>
+            </li>
+            <li class="travel">
+                <h3>Travel <br /> & Hospitality</h3>
+                <p>Decades of project experience, including GDS (supply side), CRS, PMS, OTA, POS, RMS and S&C
+                    integrations, machine learning caches, data warehouse and analytics, AI-enhanced booking engines,
+                    and deployment and support.</p>
+            </li>
+        </ul>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <div>
+                    <img src="assets/desktop/BigData@3x.svg" alt='BigData'>
+                    <p>Big Data & Business Intelligence</p>
                 </div>
-              <div class="image-container">
-              </div>
-          </div>        
-    </header>          
+                <div>
+                    <img src="assets/desktop/Blockchain@3x.svg" alt="blockhain">
+                    <p>Blockchain & Crypto</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="assets/desktop/Enterprise@3x.svg" alt="enterprise">
+                    <p>Enterprise Integration</p>
+                </div>
+                <div>
+                    <img src="assets/desktop/MaschineLearning@3x.svg" alt='MaschineLearning'>
+                    <p>Machine Learning</p>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div>
+                    <img src="assets/desktop/Implementation@3x.svg" alt="implementation">
+                    <p>Implementation & Rollout</p>
+                </div>
+                <div>
+                    <img src="assets/desktop/Certification@3x.svg" alt="certification">
+                    <p>Interface Certification & Validation</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="assets/desktop/DevOps@3x.svg" alt='DevOps'>
+                    <p>DevOps</p>
+                </div>
+                <div>
+                    <img src="assets/desktop/Legacy@3x.svg" alt="legacy">
+                    <p>Legacy Technologies</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="technologies">
+        <h3>Technologies we are using </h3>
+        <div class="logos">
+            <img class="java" src="assets/desktop/Java@2x.png" />
+            <img class="js" src="assets/desktop/JS@2x.png" />
+            <img class="python" src="assets/desktop/Python@2x.png" />
+            <img class="react" src="assets/desktop/React@2x.png" />
+            <img class="net" src="assets/desktop/NET@2x.png" />
+            <img class="angular" src="assets/desktop/AngularJS@2x.png" />
+            <img class="hadoop" src="assets/desktop/Hadoop@2x.png" />
+        </div>
+    </section>
+    <section class="news">
+        <h2>News and Events</h2>
+        <ul>
+            <li>
+                <img src='assets/desktop/Rectangle 2.svg'>
+                <div>
+                    <span>MAR 5 -7, 2019</span>
+                    <h3>ITB Berlin, Germany</h3>
+                    <p>The ITB Berlin is the world's largest tourism trade fair. The companies represented at the fair
+                        include hotels, tourist boards, tour operators, system providers, airlines and car rental
+                        companies. The ITB Berlin takes place annually in March at the Messe Berlin. Sciant is
+                        attending
+                        for the fourth consecutive year.</p>
+                    <a href="http://www.itb.com" target="_blank">Learn more</a>
+                </div>
+            </li>
+            <hr />
+            <li>
+                <img src='assets/desktop/Rectangle Copy 20.svg'>
+                <div>
+                    <span>Jun 17-20, 2019</span>
+                    <h3>HITEC Minneapolis, USA</h3>
+                    <p>Produced by HFTP, HITEC is the world's largest hospitality technology show, bringing the
+                        brightest
+                        minds and hottest technologies to one place. This will be Sciant’s third consecutive year in
+                        attendance.</p>
+                    <a href=" https://www.hftp.org/hitec/minneapolis/" target="_blank">Learn more</a>
+                </div>
+            </li>
+            <hr />
+            <li>
+                <img src='assets/desktop/Rectangle Copy 19.svg'>
+                <div>
+                    <span>Sep 2019</span>
+                    <h3>HTNG European Conference</h3>
+                    <p>Don't miss the breakthrough discussions and networking that happens when HTNG brings together
+                        industry professionals at extraordinary events. Plan to attend!</p>
+                    <a href="https://www.htng.org/page/Events" target="_blank">Learn more</a>
+                </div>
+            </li>
+            <hr />
+            <li>
+                <img src='assets/desktop/Rectangle Copy 18.svg'>
+                <div>
+                    <span> Nov 4-6, 2019</span>
+                    <h3>WTM London, UK</h3>
+                    <p>The global meeting place for the travel trade. World Travel Market London is the leading global
+                        event for the travel industry to meet industry professionals and conduct business deals. This
+                        will
+                        be Sciant’s fourth consecutive year in attendance.</p>
+                    <a href=" https://london.wtm.com/" target="_blank">Learn more</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="clients">
+        <h2>Clients & Experience</h2>
+        <div class="gallery">
+            <div class="prev" onclick="plusDivs(-1)"></div>
 
-
-    <!-- About -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="about" class="about bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <h2>About Us</h2>
-
-                    <p class="lead" style="text-align: justify;">Sciant was founded by seasoned professionals in IT services industry, experienced overcoming technological and cultural challenges. </p>
-
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="about-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-university fa-stack-1x text-primary"></i>
-                                </span>
-                                <h4>
-                                    <strong>Areas of Expertise</strong>
-                                </h4>
-                                <ul class = "text-left">
-                                    <li>B2B system integration</li>
-                                    <li>Web UX &amp; Application development</li>
-                                    <li>Database design &amp; development, big data</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="about-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-industry fa-stack-1x text-primary"></i>
-                                </span>
-                                <h4>
-                                    <strong>Industries</strong>
-                                </h4>
-                                <ul class = "text-left">
-                                    <li>Automotive</li>
-                                    <li>Finance</li>
-                                    <li>Insurance</li>
-                                    <li>Travel &amp; Leisure</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="about-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cogs fa-stack-1x text-primary"></i>
-                                </span>
-                                <h4>
-                                    <strong>Technologies</strong>
-                                </h4>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <ul class = "text-left">
-                                            <li>Java</li>
-                                            <li>C++</li>
-                                            <li>Python</li>
-                                            <li>JavaScript</li>
-                                            <li>React</li>
-                                        </ul> 
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <ul class = "text-left">
-                                            <li>.NET</li>
-                                            <li>HTML5</li>
-                                            <li>CSS</li>
-                                        </ul> 
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
+            <div class='comments'>
+                <div class='view'>
+                    <h3>“Sciant is a great addition to our integration team, helping us to extend our interface
+                        development
+                        capabilities. They provide a cost effective extension to Cendyn’s development division and
+                        deliver
+                        predictable results though reusable processes and components.”</h3>
+                    <div class='person'>
+                        <img src='assets/desktop/Oval.svg'>
+                        <p>Piers Hughes<br /><span>CIO, Cendyn</span></p>
                     </div>
-                    <!-- /.row (nested) -->
+                    <hr class="hrlogo">
+                    <div class="clientLogo">
+
+                        <img class='sendin' src="assets/desktop/cendin-logo.png" />
+                    </div>
                 </div>
-                <!-- /.col-lg-10 -->
+                <div class='view hide'>
+                    <h3> “Sciant has proven themselves to be a valued partner in our product development efforts at
+                        Koridor. As we have grown and our needs changed Sciant has worked closely with us as a trusted
+                        resource. The Sciant team members put their full energy, enthusiasm and technology skills into
+                        our projects.” </h3>
+                    <div class='person'>
+                        <img src='assets/desktop/John-Darby.png'>
+                        <p>John Darby</br><span>CTO, Koridor</span></p>
+                    </div>
+                    <hr class="hrlogo">
+                    <div class="clientLogo">
+                        <img class='koridor' src="assets/desktop/koridor-logo-01_Final-A@2x.png" />
+                    </div>
+                </div>
+                <div class='view hide'>
+                    <h3>“Combining skilled technologists with experienced travel domain
+                        expertise, Sciant is doing a terrific job with DHISCO as we work
+                        together to connect the hospitality industry's largest and most complex
+                        OTAs, GDSs and hoteliers.”</h3>
+                    <div class='person'>
+                        <img src='assets/desktop/Brayan-Bradley.jpg'>
+                        <p> Bryan Bradley<br><span>former CIO, DHISCO</span></p>
+                    </div>
+                    <hr class="hrlogo">
+                    <div class="clientLogo">
+
+                        <img class='dhisco' src="assets/desktop/DHISCO@2x.png" /> </div>
+                </div>
+                <div class='view hide'>
+                    <h3> “Leveraging their deep knowledge in hospitality, particularly
+                        with the Oracle Opera platform, Sciant was able to quickly and
+                        effectively deliver a critical project for Duetto. Their team
+                        quickly assessed the business need and developed the solution.”</h3>
+                    <div class='person'>
+                        <img src='assets/desktop/Michael-McCartan.png'>
+                        <p>Michael McCarten<br /><span>Managing Director, EMEA, Duetto</span></p>
+                    </div>
+                    <hr class="hrlogo">
+                    <div class="clientLogo">
+
+                        <img class='duetto' src="assets/desktop/DUETTO@2x.png" />
+                    </div>
+                </div>
             </div>
-            <!-- /.row -->
+            <div class="next" onclick="plusDivs(1)"></div>
         </div>
-        <!-- /.container -->
+        <hr class="hr" />
+        <div class="logos">
+            <img class='sendin' src="assets/desktop/cendin-logo.png" />
+            <img class='koridor' src="assets/desktop/koridor-logo-01_Final-A@2x.png" />
+            <img class='dhisco' src="assets/desktop/DHISCO@2x.png" />
+            <img class='tora' src="assets/desktop/Group@2x.png" />
+            <img class='ota' src="assets/desktop/OTA@2x.png" />
+            <img class='protel' class='protel' src="assets/desktop/PROTEL@2x.png" />
+            <img class='duetto' src="assets/desktop/DUETTO@2x.png" />
+            <img class='ivvi' src="assets/desktop/IVVY@2x.png" />
+        </div>
+    </section>
+    <section id="jobs">
+        <h2>Job Opportunities</h2>
+        <p>These are our current opportunities. However, even if you don’t see an exact fit, go ahead and send us your
+            CV and tell us a bit about how you can contribute. We’ll always make room for the right candidate!</p>
+        <ul>
+            <li>
+                <h3>Senior .Net/C# Developer</h3>
+                <h4 class="bulgaria">SOFIA, BULGARIA </h4>
+                <p>This position will be involved in a project in the Travel & Hospitality practice, focusing on
+                    integrations between various hotel systems.</p>
+                <!-- <a href="https://www.jobs.bg/job/4697508">Apply</a> -->
+            </li>
+            <li>
+                <h3>DevOps<br /> Engineer</h3>
+                <h4 class="bulgaria">SOFIA, BULGARIA </h4>
+                <p>This position will be working on maintaining client infrastructure in AWS.</p>
+                <!-- <a href=" https://www.jobs.bg/job/4697508">Apply</a> -->
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h3>Senior Java Developer with Docker and Kubernetes</h3>
+                <h4 class="bulgaria">SOFIA, BULGARIA </h4>
+                <p>This position will be involved in a project in the Travel & Hospitality practice, focusing on
+                    integrations between various hotel systems.</p>
+                <!-- <a href="https://www.jobs.bg/job/4695425 ">Apply</a> -->
+            </li>
+            <li>
+                <h3>Opera PMS<br /> Support<br /> Specialist</h3>
+                <h4 class="czech">OLOMOUC, CZECH REPUBLIC </h4>
+                <p>This position will be working on maintaining customers Oracle Opera PMS system.</p>
+                <!-- <a href="https://www.jobs.bg/job/4674823">Apply</a> -->
+            </li>
+        </ul>
+    </section>
+    <section id="contact">
     </section>
 
-     <!-- Services -->
-     <section id="services" class="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Services</h2>
-                    <p class="lead" style="text-align: justify;">Sciant offers:</p>
-                    <p class="lead" style="text-align: justify;">
-                         * Custom software development in Java, Python and C/C++ technology stacks</br>
-                         * Web development with React, Bootstrap, Angular and other modern JavaScript frameworks</br>
-                         * Database design and development - Oracle, PostgreSQL, MySQL</br>
-                         * Development of interface solutions for B2B integration - SAP IDOC, EDI, XML, various proprietary file formats</br>
-                         * Development of enterprise-class system supporting large transaction volume</br>
-                         * Quality Assurance - by domain experts, both automated and manual testing                        
-                    </p>
-                    <p class="lead" style="text-align: justify;">Our professionals can provide partial or full project life-cycle coverage: system/business analysis; design and architecture; software development; manual or automated testing; system deployment and ongoing system improvements and maintenance. </p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>   
 
-    <!-- Careers -->
-     <section id="careers" class="call-to-action careers bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Careers</h2>
-                    <p class="lead">Join our team to develop yourself and grow as a professional. .NET and Java hackers needed!</p>
-                    <a class="btn btn-lg btn-dark" href="mailto:jobs@sciant.com">jobs@sciant.com</a>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-    <!-- Map -->
-    <section id="contact" class="map">
-        <iframe id="map_contact" width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.651505697637!2d23.370828938420495!3d42.668739885111336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcbc66ddbb54d08b3!2sSofia+Tech+Park!5e0!3m2!1sen!2sbg!4v1472470291603" frameborder="0" style="border:0; position:relative;" allowfullscreen></iframe>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Sciant</strong>
-                    </h4>
-                    <p>Sofia Tech Park<br />111B Tzarigradsko Shouse, floor 1<br />Sofia 1784, Bulgaria</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> + 359 89 7878 777</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:info@sciant.com">info@sciant.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://github.com/sciant"><i class="fa fa-github fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/sciantcom/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <!--<li>
-                            <a href="https://twitter.com/sciant"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>-->
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Sciant 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-
-    $(document).ready(function () {
-
-        // you want to enable the pointer events only on click;
-
-        $('#map_contact').addClass('scrolloff'); // set the pointer events to none on doc ready
-        $('#contact').on('click', function () {
-            $('#map_contact').removeClass('scrolloff'); // set the pointer events true on click
-        });
-
-        // you want to disable pointer events when the mouse leave the canvas area;
-
-        $("#map_contact").mouseleave(function () {
-            $('#map_contact').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
-        });
-    });    
-
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-83544643-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-
-
-    <script src="js/classie.js"></script>
-    <script src="js/gnmenu.js"></script>
-    <script>
-    new gnMenu( document.getElementById( 'gn-menu' ) );
-    </script>
-
+    <div id='footer'></div>
 </body>
 
 </html>
