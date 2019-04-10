@@ -1,12 +1,44 @@
 
+		<script type="text/javascript">		
+		function sendFeedback() {
+			$.ajax({
+			  type: 'GET',
+			  url: "https://docs.google.com/forms/d/e/1FAIpQLSdtkja2yAD22FcuZPQYrXlVCnkEfhRQn4OeT2esEFgRnwdeKw/formResponse?entry.642122648=" + 
+					encodeURIComponent(document.getElementById('entry.642122648').value) + "&entry.730869534=" + encodeURIComponent(document.getElementById('entry.730869534').value) + 
+					"&entry.1270872058=" + encodeURIComponent(document.getElementById('entry.1270872058').value),
+					headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+			   statusCode: {
+				  0: function() {
+					successfulSubmission();
+				  },
+				  200: function() {
+				    successfulSubmission();
+				  }
+			  },
+			});
+		}
+		
+		function successfulSubmission() {
+			$("#getInTouchBtn").html('Thanks!');
+			$("#getInTouchBtn").css('background-color','rgba(250, 250, 250, 0.15)');
+			document.getElementById('entry.642122648').value = "";
+			document.getElementById('entry.730869534').value = "";
+			document.getElementById('entry.1270872058').value = "";
+		}
+		</script>
+
         <h2>Interested in working with us?</h2>
         <p>We offer a variety of engagement methods in order to meet our clients needs. Get in touch to find out how
             Sciant can help you!</p>
-        <form action="mailto:getintouch@sciant.com" method="post" enctype="text/plain">
+        <form name="gform" id="gform" target="hidden_iframe" enctype="text/plain" onsubmit="sendFeedback(); submitted=true;">
             <div class="user">
-                <input type="text" name='Name' placeholder="Your name">
-                <input type="text" name='Email' placeholder="Email or phone number">
+                <input type="text" id='entry.642122648' name='entry.642122648' placeholder="Your name">
+                <input type="text" id='entry.730869534' name='entry.730869534' placeholder="Email or phone number">
             </div>
-            <input class = 'message' type="text" name = 'Message' placeholder="Message">
-            <a style="margin:auto" class="button" href="mailto:getintouch@sciant.com">Get in touch</a>
+            <input class = 'message' type="text" id='entry.1270872058' name='entry.1270872058' placeholder="Message">
+            <button id="getInTouchBtn" name="getInTouchBtn" class="button" type="submit" >Get in touch</button>
         </form>
+		
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
