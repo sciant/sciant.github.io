@@ -2,9 +2,16 @@
     width: device-width;
 }
 
+.emailNotValidTip {
+	color: #cc0000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 body {
     position: static;
     max-width: 1680px;
+    width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 22px;
     letter-spacing: -0.2px;
@@ -12,10 +19,20 @@ body {
     padding: 0 auto;
     color: #1F2020;
     line-height: 32px;
+    scroll-snap-type:none;
+    scroll-snap-align: none;
+    overflow-x: hidden;
+}
+.head {
+    width: 60%;
+}
+
+div.menuDiv.fa, .fa-align-justify {
+    display: none;
 }
 
 section {
-    max-width: 100%;
+    max-width: 1680px;
 }
 
 h1 {
@@ -70,16 +87,31 @@ hr {
     max-width: 903px;
     margin: auto;
     border: 1px solid #D2D3D4;
-    width: 100%;
+    width: 99%;
     margin-bottom: 30px;
     margin-top: 50px;
 }
+#servicesID {
+    height: 88px;
+}
+#verticalsID {
+    height: 88px;
+}
+#jobsID {
+    height: 88px;
+}
 
 .header {
+    width: 100%;
+    max-width: 1680px;
+    max-height: 88px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 33px;
+    top: 0;
+    position: fixed;
+    background-color:#FFFFFF;
+    z-index: 100000;
 }
 
 .logo-header {
@@ -87,17 +119,21 @@ hr {
     width: 191px;
     height: 64px;
     margin-left: 36px;
+    margin-top: 2%;
+    margin-bottom: 4%;
 }
 
-.header ul {
+
+#menu{
     padding: 0px;
     justify-content: flex-end;
-    width: 60%;
+    background-color: #FFFFFF;
     margin-right: 3%;
+
 }
 
 .header li {
-    margin: 0px 2%;
+    margin: 3% 2% 0;
 }
 
 .header a {
@@ -110,7 +146,7 @@ hr {
 
 
 .presentation {
-    margin: 0 2% 0 21.3%;
+    margin: 6% 2% 0 21.3%;
 }
 
 .presentation h3 {
@@ -488,40 +524,29 @@ hr {
 
 }
 
-.prev::before {
-    content: url('../assets/desktop/Left@3x.svg');
-    width: 58px;
-    height: 58px;
-    margin-top: 140px;
-    display: inline-block;
-    margin-left: 58px;
-}
 
 .prev {
-
-    width: 58px;
-    height: 58px;
     margin-top: 140px;
-    display: inline-block;
-
+    color: #FFFFFF;
+    margin-left: 5%;
+    opacity: 0.72
 }
 
-.next::after {
-    content: url('../assets/desktop/Right@3x.svg');
-    width: 58px;
-    height: 58px;
-    margin-top: 140px;
-    display: inline-block;
-    margin-right: 29px;
+.fa-angle-right:before{
+    font-size: 106px;  
 }
 
 .next {
 
-    width: 58px;
-    height: 58px;
     margin-top: 140px;
-    display: inline-block;
+    margin-top: 140px;
+    margin-right: 5%;
+    color: #FFFFFF;
+    opacity: 0.72
+}
 
+.fa-angle-left:before{
+    font-size: 106px;
 }
 
 
@@ -923,8 +948,6 @@ button {
 }
 
 .pictures-desktop img {
-    /* margin-top: 8px; */
-    /* vertical-align: middle; */
     width: 100%;
 }
 
@@ -1230,14 +1253,67 @@ button {
 }
 
 @media (max-width: 778px) {
+    
 
-    /* section {
-        width: 95%;
-        margin: auto;
+    div.menuDiv.fa ,.fa-align-justify {
+        display: inline-block;
+        margin-top: 40px;
+        margin-bottom: 18px;
+        color: #3065A4;
+        float: right;
+        margin-right: 4%;
+        font-size: 35px;
+
     }
-    #contact {
+    #menu {
+        display: none;
+    }
+	
+    .header{
+        display: block;
+    }
+
+    .header a {
+        display: inline-block;
+       font-size: 30px;
+    }
+    .header li {
+        border-bottom: 1px solid #757575;
+        
         width: 100%;
-    } */
+        text-align: center;
+        padding: 8px;
+     
+    }
+     ul#menu li:hover {
+        background-color: #757575;
+       
+    }
+
+	ul#menu a {
+		width:100%;
+		height:100%;
+	}
+	
+    #menu {
+
+        overflow: hidden;
+        padding: 0;
+        margin: 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        -webkit-transition: all 0.3s ease;
+        width: 100%;   
+      }
+    .head {
+          width: 100%;
+          margin-top: -127px;
+    }
+
+    .presentation {
+        margin-top: 20%;
+    }
     .location {
         width: 100%;
     }
@@ -1248,10 +1324,7 @@ button {
         line-height: 53px;
         margin-bottom: 28px;
     }
-
-    .header ul {
-        display: none;
-    }
+   
 
     #services ul {
         flex-direction: column;
@@ -1320,19 +1393,22 @@ button {
         margin-bottom: 35px;
     }
 
-    .header {
-        margin-top: 37px;
+    div.menuDiv.fa, .fa-align-justify {
+    
+        margin-bottom: 6px;
+      
     }
-
     .logo-header {
         background-image: url('../assets/mobile/Logotype.png');
         width: 131px;
         height: 44px;
+        margin-top: 6%;
         margin-left: 29px;
+        
     }
 
     .presentation {
-        margin: 56px 2% 0 9%;
+        margin: 26% 2% 0 9%;
     }
 
     .presentation h3 {
@@ -1349,6 +1425,10 @@ button {
 
     .presentation .twitter {
         margin-top: 49px;
+    }
+    .head {
+        margin-top: -98px;
+		overflow: auto;
     }
 
     #about {
@@ -1456,13 +1536,21 @@ button {
     }
 
     .prev {
-        height: 32px;
-        width: 32px;
+      
+        margin-top: 300px;
     }
 
     .next {
-        height: 32px;
-        width: 32px;
+     
+        margin-top: 300px;
+    }
+    .fa-angle-right:before{
+        font-size: 56px;
+        
+    }
+    .fa-angle-left:before{
+        font-size: 56px;
+        
     }
 
     .gallery .clientLogo {
@@ -1484,20 +1572,6 @@ button {
 
     .clients .logos {
         display: none;
-    }
-
-    .prev::before {
-        height: 32px;
-        width: 32px;
-        margin-top: 232px;
-        margin-left: 25px;
-    }
-
-    .next::after {
-
-        margin-top: 232px;
-        margin-left: -15px;
-
     }
 
     .person {
@@ -1788,7 +1862,6 @@ button {
         border-bottom: 1px solid #D2D3D4;
         padding-bottom: 48px;
         justify-content: space-between;
-        /* margin-bottom: 0; */
     }
 
     .management .person {

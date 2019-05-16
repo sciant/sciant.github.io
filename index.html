@@ -8,18 +8,16 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'UA-83544643-1');
 	</script>
-	
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="styles/index.css" rel="stylesheet" />
     <link rel="icon" href="assets/desktop/Logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sciant</title>
 
     <script>
@@ -33,7 +31,10 @@
 
     <script>
         var slideIndex = 1;
-        showDivs(slideIndex);
+        var obj ={
+           start:0,
+		};
+	    var submitted = false;
 
         function plusDivs(n) {
             showDivs(slideIndex += n);
@@ -49,21 +50,89 @@
             }
             x[slideIndex-1].style.display = "block";
         }
+     
+        function start(e) {
+            obj.start = e.changedTouches[0].clientX;
+      
+        };
+
+        function end(e) {
+  
+            let start = obj.start;
+            let end = e.changedTouches[0].clientX;
+          
+          if(start===end) {
+              return
+          }
+          else if(start>end) {
+            plusDivs(1)
+          } else {
+              plusDivs(-1);
+          }
+        }
+
+    </script>
+    <script>
+        function menuFunction() {
+            var y = window.matchMedia("(max-width: 778px)");
+            var x = document.getElementById('menu');
+            if(y.matches){
+				if(x.style.display === 'none') {
+					x.style.display = 'flex';
+				} else {
+					x.style.display = 'none';
+				}
+			}
+		}
+		
+		$(document).ready(function(){
+			if(window.matchMedia("(max-width: 778px)").matches) {
+				document.getElementById('menu').style.display = 'none';
+			}
+		
+			$(document).mouseup(function(e){
+			    var y = window.matchMedia("(max-width: 778px)");
+			    var x = document.getElementById('menu');
+				if(y.matches) {
+					if(e.target.id != "menuHolder") {
+						document.getElementById('menu').style.display = 'none';
+					} else {
+						menuFunction();
+					}
+				}
+			});
+			
+			$(document).scroll(function(e){
+			    var y = window.matchMedia("(max-width: 778px)");
+			    var x = document.getElementById('menu');
+				if(y.matches) {
+					if(e.target.id != "menuHolder") {
+						document.getElementById('menu').style.display = 'none';
+					} else {
+						menuFunction();
+					}
+				}
+			});			
+		});  
     </script>
 
 </head>
 
 <body>
-    <section class='header'>
+    <section id="menuHolder" class='header'>
         <div class='logo-header'></div>
-        <ul>
-            <li><a href='view/about.html'>About Us</a></li>
-            <li><a href='#verticals'>Verticals</a></li>
-            <li><a href='#services'>Services</a></li>
-            <li><a href='#jobs'>Jobs</a></li>
-            <li><a href='#contact'>Contact</a></li>
+        <div class = 'head'>
+        <div onclick="menuFunction()" class = 'menuDiv fa fa-align-justify'></div>
+        <ul id ='menu'>
+            <li onclick="menuFunction()"><a href='view/about.html'>About Us</a></li>
+            <li onclick="menuFunction()"><a href='#verticalsID'>Verticals</a></li>
+            <li onclick="menuFunction()"><a href='#servicesID'>Services</a></li>
+            <li onclick="menuFunction()"><a href='#jobsID'>Jobs</a></li>
+            <li onclick="menuFunction()"><a href='#contactID'>Contact</a></li>
         </ul>
+    </div>
     </section>
+
     <section class='presentation'>
         <h1> Building better software through relentless customer focus.</h1>
         <h3>At Sciant, we specialize in delighting our customers by combining top notch service delivery with extensive
@@ -79,13 +148,17 @@
     <section id="about">
         <video autoplay muted loop id='sciantVideo'>
             <source src='assets/desktop/Sciant-Blue30s.mp4' type="video/mp4">
-        </video>
+            </video>
+       
         <h3>Our founders started Sciant to solve an industry challenge: Create a company that could quickly deliver
             urgent customer projects without the typical months' long knowledge transfer and overhead that traditional
             outsourcing requires.
         </h3>
         <a href="view/about.html">Learn more about us</a>
+       
     </section>
+
+    <div id ='verticalsID'></div>
     <section id="verticals">
         <h2> What we do</h2>
         <p class='knowledge'>Sciant brings together deep knowledge and experience in the following verticals:</p>
@@ -113,10 +186,14 @@
                 <h3>Travel <br /> & Hospitality</h3>
                 <p>Decades of project experience, including GDS (supply side), CRS, PMS, OTA, POS, RMS and S&C
                     integrations, machine learning caches, data warehouse and analytics, AI-enhanced booking engines,
-                    and deployment and support.</p>
+                    and deployment and support.
+                </p>
             </li>
+
         </ul>
+
     </section>
+    <div id='servicesID'></div>
     <section id="services">
         <h2>Our Services</h2>
         <ul>
@@ -179,7 +256,6 @@
     <section class="news">
         <h2>News and Events</h2>
         <ul>
-            
             <li>
                 <img src='assets/desktop/Rectangle Copy 20.svg'>
                 <div>
@@ -192,7 +268,6 @@
                     <a href=" https://www.hftp.org/hitec/minneapolis/" target="_blank">Learn more</a>
                 </div>
             </li>
-         
             <hr />
             <li>
                 <img src='assets/desktop/Rectangle Copy 18.svg'>
@@ -205,9 +280,9 @@
                         be Sciant’s fourth consecutive year in attendance.</p>
                     <a href=" https://london.wtm.com/" target="_blank">Learn more</a>
                 </div>
-            </li>
-		   <hr />
-            <li>
+            </li>            
+            <hr />
+			<li>
                 <img src='assets/desktop/Rectangle Copy 19.svg'>
                 <div>
                     <span>Nov 18-20, 2019</span>
@@ -221,8 +296,8 @@
     </section>
     <section class="clients">
         <h2>Clients & Experience</h2>
-        <div class="gallery">
-            <div class="prev" onclick="plusDivs(-1)"></div>
+        <div class="gallery" ontouchstart= 'start(event)' ontouchend='end(event)'>
+            <div class="prev fa fa-angle-left" onclick="plusDivs(-1)" ></div>
 
             <div class='comments'>
                 <div class='view'>
@@ -285,7 +360,7 @@
                     </div>
                 </div>
             </div>
-            <div class="next" onclick="plusDivs(1)"></div>
+            <div class="next fa fa-angle-right" onclick="plusDivs(1)"></div>
         </div>
         <hr class="hr" />
         <div class="logos">
@@ -299,6 +374,7 @@
             <img class='ivvi' src="assets/desktop/IVVY@2x.png" />
         </div>
     </section>
+    <div id='jobsID'></div>
     <section id="jobs">
         <h2>Job Opportunities</h2>
         <p>These are our current opportunities. However, even if you don’t see an exact fit, go ahead and send us your
@@ -334,6 +410,7 @@
             </li>
         </ul>
     </section>
+    <div id='contactID'></div>
     <section id="contact">
     </section>
 
