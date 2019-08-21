@@ -81,8 +81,13 @@ a {
     line-height: 30px;
 }
 
+.year {
+	text-decoration: underline;
+}
 
-
+.blogTitle {
+	text-align: center;
+}
 
 hr {
     max-width: 903px;
