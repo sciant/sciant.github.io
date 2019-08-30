@@ -767,7 +767,7 @@ button {
 }
 
 #footer {
-    height: 140px;
+    height: 190px;
     color: #757575;
     background-color: rgba(3, 3, 3, 0.95);
     font-size: 18px;
@@ -777,18 +777,32 @@ button {
 
 }
 
-#footer ul {
+.footer_information {
     padding-top: 63px;
     justify-content: space-between;
     width: 70%;
     margin: auto;
 }
 
-#footer li {
+.footer_information_el {
     border-right: 1px solid #C4CBD3;
     padding-right: 2%;
     height: 16px;
     width: 191px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer_icon_list {
+    padding-top: 63px;
+    justify-content: space-between;
+    width: 15%;
+    margin: auto;
+}
+
+.footer_icon_element {
+    padding-right: 2%;
+    height: 16px;
     text-align: center;
     margin-right: 10px;
 }
