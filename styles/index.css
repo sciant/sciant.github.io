@@ -637,6 +637,12 @@ hr {
     width: 100px;
 }
 
+.resbot {
+    height: 43px;
+    width: 100px;	
+	opacity: 0.4;
+}
+
 #jobs {
     display: flex;
     flex-direction: column;
