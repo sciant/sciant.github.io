@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="If you are interested to know more about our previous news, you can visit our news archive here"/>
+    <link href="../styles/index.css" rel="stylesheet" />
+    <link rel="icon" href="../assets/desktop/Logo.png">
+    <title>Sciant - News Archive</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="about">
+        <img class='logo' src="../assets/desktop/Logo.png" />
+        <a href="../index.html">HOME</a>
+    </div>
+    <section class="blogTitle">
+        <h1>News Archive</h1>
+    </section>
+	<section class="news">
+        <h2 class="year">2019</h2>
+		<ul>
+			<hr />
+			<li itemscope itemtype="https://schema.org/NewsArticle">
+				<img style="border:none" src='../assets/desktop/ShadesChatbots.svg' alt='50 Shades Of Chatbots: What Remains After The Sexiness Has Gone news' itemprop="image">
+				<div>
+					<span itemprop="datePublished">Jul 22, 2019</span>
+					<h3 itemprop="headline">50 Shades Of Chatbots: What Remains After The Sexiness Has Gone</h3>
+					<p itemprop="name">"Now that chatbots are no longer sexy, are they finally becoming useful?" Great insight about chatbots in the Hospitality industry!</p>
+					<a itemprop="author" href=" https://www.hospitalitynet.org/opinion/4094299.html" target="_blank">Learn more</a>
+				</div>
+			</li>	
+		</ul>
+    </section>
+
+    <div id='footer'></div>
+</body>
+
+</html>
