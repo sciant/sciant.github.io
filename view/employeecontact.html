@@ -1,0 +1,131 @@
+
+		<script type="text/javascript">
+		var firebaseConfig = {
+			apiKey: "AIzaSyD6hH87GpDzsQ-hR_OZmSQIISHM0OP0YI4",
+			authDomain: "websiteemployeeform.firebaseapp.com",
+			databaseURL: "https://websiteemployeeform.firebaseio.com",
+			projectId: "websiteemployeeform",
+			storageBucket: "websiteemployeeform.appspot.com",
+			messagingSenderId: "802228380312",
+			appId: "1:802228380312:web:4d7c65d7dcd2ac4558a6ed"
+		};
+		
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		const storageService = firebase.storage();
+		const storageRef = storageService.ref();
+				
+		var selectedFile;
+		function handleFileUploadChange(e) {
+			document.getElementById('filename').value = e.target.files[0].name;
+			selectedFile = e.target.files[0];
+		}
+		
+		function handleFileUploadSubmit(e) {
+			if(selectedFile != null) {
+				split = selectedFile.name.split('.')
+				filename = split[0] + "_" + new Date().getTime() + "." + split[1]
+				const uploadTask = storageRef.child('CV/' + filename).put(selectedFile);
+				  
+				uploadTask.on('state_changed', (snapshot) => {
+					// Observe state change events such as progress, pause, and resume
+				}, (error) => {
+					// Handle unsuccessful uploads
+					console.log(error);
+				}, () => {
+					 employeeSubmitted();
+				});
+			}
+		}
+		
+		function sendEmployeeInfo() {
+			if (document.getElementById("consent").checked) {
+				if(validateEmail(document.getElementById('entry.64547335').value) && document.getElementById('entry.1692674076').value != '') {
+					$("#employeeEmailTip").hide();
+					$.ajax({
+					  type: 'GET',
+					  url: "https://docs.google.com/forms/d/e/1FAIpQLSfiXKqfKRSMTxscgC2kZM979jdfvbIUAtd8M45MQ7HSrjzOwg/formResponse?entry.1692674076=" + 
+							encodeURIComponent(document.getElementById('entry.1692674076').value) + "&entry.64547335=" + 
+							encodeURIComponent(document.getElementById('entry.64547335').value) + "&entry.1238806097=" + 
+							encodeURIComponent(document.getElementById('entry.1238806097').value) +"&entry.1995443336=" + 
+							encodeURIComponent(document.getElementById('entry.1995443336').value) +"&entry.1307094169=" + 
+							encodeURIComponent(document.getElementById('entry.1307094169').value),
+							headers: {
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+					   statusCode: {
+						  0: function() {
+							handleFileUploadSubmit();
+							employeeSubmitted();
+						  },
+						  200: function() {
+							handleFileUploadSubmit();
+							employeeSubmitted();
+						  }
+					  },
+					});
+				} else {
+					$("#employeeEmailTip").show();
+				}
+            }
+            else {
+				$("#consentNotGiven").show();
+            }
+		}
+		
+		function validateEmail(emailField) {
+			var emailRegex = /\S+@\S+\.\S+/;
+			return emailRegex.test(String(emailField).toLowerCase());
+		}
+		
+		function employeeSubmitted() {
+			$("#employeeGetInTouchBtn").html('Thanks!');
+			$("#employeeGetInTouchBtn").css('background-color','rgba(250, 250, 250, 0.15)');
+			document.getElementById('entry.1692674076').value = "";
+			document.getElementById('entry.64547335').value = "";
+			document.getElementById('entry.1995443336').value = "";
+			document.getElementById('entry.1238806097').value = "";
+			document.getElementById('entry.1307094169').value = "";
+			document.getElementById('filename').value = "";
+			document.getElementById("consent").checked = false;
+		}
+		
+		document.getElementById('consent').addEventListener( 'change', function() {
+			if(this.checked) {
+				$("#consentNotGiven").hide();
+			}
+		});
+		
+		</script>
+
+        <h2>Join our team</h2>
+        <p>Fill in the application form and become a part of our team. If you did not find a position matching what you are looking for, fill in the form anyway. We will try to find the best fit for you.</p>
+        <form name="employeeform" id="employeeform" target="hidden_iframe" enctype="text/plain" onsubmit="sendEmployeeInfo(); submitted=true;">
+            <div class="user">
+                <input type="text" id='entry.1692674076' name='entry.1692674076' placeholder="Your name">
+                <input type="text" id='entry.64547335' name='entry.64547335' placeholder="Email">
+            </div>
+			<span class="formNotValidTip" style="display:none;" id="employeeEmailTip" >Please, fill a valid email or phone number and name.</span>
+			<div class="user">
+				<input type="text" id='entry.1238806097' name='entry.1238806097' placeholder="Position applying for">
+                <input type="text" id='entry.1307094169' name='entry.1307094169' placeholder="LinkedIn profile URL">
+            </div>
+			<div class="upload-div">
+				<input id="filename" type="text" class="upload-filename" placeholder="Resume" disabled>
+				<label for="file-upload" class="file-upload-label" class="custom-file-upload">
+					<i class="fa fa-cloud-upload"></i> Upload CV
+				</label>
+				<input id="file-upload" type="file" onchange='handleFileUploadChange(event)' accept="application/msword, application/pdf" />
+			</div>
+			<div>
+				<input class = 'employee-message' type="text" id='entry.1995443336' name='entry.1995443336' placeholder="Message">
+            </div>
+			<label>
+				<input id="consent" class="consent" type="checkbox" name="consent" value="value">
+				<span>I freely give my consent to Sciant to have my personal information processed for recruitment purposes.</span>
+			</label>
+			<span class="formNotValidTip" style="display:none;" id="consentNotGiven" >Please, confirm that you allow Sciant to handle your personal information.</span>
+			<button id="employeeGetInTouchBtn" name="employeeGetInTouchBtn" class="button" type="submit" >Get in touch</button>
+        </form>
+		
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
