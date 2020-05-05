@@ -28,6 +28,7 @@
     <link rel="icon" href="assets/desktop/Logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sciant - IT and Software Development Services Company</title>
 
@@ -133,6 +134,51 @@
 				}
 			  });
 		});  
+    </script>
+    <script>
+
+        function getBrowserWidth() {
+
+            if (self.innerWidth) {
+                return self.innerWidth;
+            }
+
+            if (document.documentElement && document.documentElement.clientWidth) {
+                return document.documentElement.clientWidth;
+            }
+
+            if (document.body) {
+                return document.body.clientWidth;
+            }
+        }
+        
+        var browserWidth = getBrowserWidth();
+
+        $(document).ready(function(){
+
+			$('.logos').slick({
+				slidesToShow: browserWidth > 778 && browserWidth < 1100 ? 3 : 5,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				arrows: false,
+				dots: false,
+					pauseOnHover: false,
+					responsive: [{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3
+					}
+				}, {
+					breakpoint: 520,
+					settings: {
+						slidesToShow: 2
+					}
+				}],
+                pauseOnFocus: false,
+                draggable: false
+			});
+		});
     </script>
 
 </head>
@@ -387,7 +433,7 @@
                     </div>
                     <hr class="hrlogo">
 		    <div class="clientLogo">
-                        <img class='intellico' src="assets/desktop/intellico@2x.png" alt="client logo IntelliCo Solutions"/>
+                        <img class='intellico' src="assets/desktop/logos-new/INTELLICO@2x.png" alt="client logo IntelliCo Solutions"/>
                     </div>
                 </div>
                 <div class='view hide'>
@@ -408,7 +454,7 @@
                     </div>
                     <hr class="hrlogo">
                     <div class="clientLogo">
-                        <img class='resbot' src="assets/desktop/HotelResBot@2x.png" alt="client logo Hotel ResBot"/>
+                        <img class='resbot' src="assets/desktop/logos-new/HOTELRESBOT@2x.png" alt="client logo Hotel ResBot"/>
                     </div>
                 </div>
                 <div class='view hide'>
@@ -429,7 +475,7 @@
                     </div>
                     <hr class="hrlogo">
                     <div class="clientLogo">
-                        <img class='ivvi' src="assets/desktop/IVVY@2x.png" alt="client logo IVvy"/>
+                        <img class='ivvi' src="assets/desktop/logos-new/IVVY@2x.png" alt="client logo IVvy"/>
 					</div>
                 </div>
 				<div class='view hide'>
@@ -442,7 +488,7 @@
                     </div>
                     <hr class="hrlogo">
                     <div class="clientLogo">
-                        <img class='tora' src="assets/desktop/Group@2x.png" alt="client logo TORA"/>
+                        <img class='tora' src="assets/desktop/logos-new/TORA@2x.png" alt="client logo TORA"/>
 					</div>
                 </div>
 				<div class='view hide'>
@@ -455,7 +501,7 @@
                     </div>
                     <hr class="hrlogo">
                     <div class="clientLogo">
-                        <img class='dhl' src="assets/desktop/DHL_logo@2x.png.png" alt="client logo DHL"/>
+                        <img class='dhl' src="assets/desktop/logos-new/DHL@2x.png" alt="client logo DHL"/>
 					</div>
                 </div>
 				<div class='view hide'>
@@ -476,17 +522,39 @@
         </div>
         <hr class="hr" />
         <div class="logos">
-            <img class='oaky' src="assets/desktop/Oaky@2x.png" alt="client logo Oaky"/>
-            <img class='dhl' src="assets/desktop/DHL_logo@2x.png.png" alt="client logo DHL"/>
-            <img class='pace' src="assets/desktop/Pace@2x.png" alt="client logo Pace"/>
-            <img class='tora' src="assets/desktop/Group@2x.png" alt="client logo TORA"/>
-            <img class='ota' src="assets/desktop/OTA@2x.png" alt="client logo OTAinsight"/>
-            <img class='protel' src="assets/desktop/PROTEL@2x.png" alt="client logo Protel"/>
-            <img class='frontlinedynamics' src="assets/desktop/logo_frontline_dynamics@2x.png" alt="client logo frontline dynamics"/>
-            <img class='ivvi' src="assets/desktop/IVVY@2x.png" alt="client logo IVvy"/>
-	    <img class='resbot' src="assets/desktop/HotelResBot@2x.png" alt="client logo Hotel ResBot"/>
-	    <img class='revenueanalytics' src="assets/desktop/RevenueAnalytics@2x.png" alt="client logo Revenue Analytics"/>
-	    <img class='intellico' src="assets/desktop/intellico@2x.png" alt="client logo IntelliCo Solutions"/>
+            <div class="slide">
+                <img class='oaky' src="assets/desktop/logos-new/OAKY@2x.png" alt="client logo Oaky"/>
+            </div>
+            <div class="slide">
+                <img class='dhl' src="assets/desktop/logos-new/DHL@2x.png" alt="client logo DHL"/>
+            </div>
+            <div class="slide">
+                <img class='pace' src="assets/desktop/logos-new/PACE@2x.png" alt="client logo Pace"/>
+            </div>
+            <div class="slide">
+                <img class='tora' src="assets/desktop/logos-new/TORA@2x.png" alt="client logo TORA"/>
+            </div>
+            <div class="slide">
+                <img class='ota' src="assets/desktop/logos-new/OTA@2x.png" alt="client logo OTAinsight"/>
+            </div>
+            <div class="slide">
+                <img class='protel' src="assets/desktop/logos-new/PROTEL@2x.png" alt="client logo Protel"/>
+            </div>
+            <div class="slide">
+                <img class='frontlinedynamics' src="assets/desktop/logos-new/FRONTLINE_DYNAMICS@2x.png" alt="client logo frontline dynamics"/>
+            </div>
+            <div class="slide">
+                <img class='ivvi' src="assets/desktop/logos-new/IVVY@2x.png" alt="client logo IVvy"/>
+            </div>
+            <div class="slide">
+                <img class='resbot' src="assets/desktop/logos-new/HOTELRESBOT@2x.png" alt="client logo Hotel ResBot"/>
+            </div>
+            <div class="slide">
+                <img class='revenueanalytics' src="assets/desktop/logos-new/REVENUE_ANALYTICS@2x.png" alt="client logo Revenue Analytics"/>
+            </div>
+            <div class="slide">
+                <img class='intellico' src="assets/desktop/logos-new/INTELLICO@2x.png" alt="client logo IntelliCo Solutions"/>
+            </div>
         </div>
     </section>
     <div id='jobsID'></div>
